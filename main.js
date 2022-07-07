@@ -154,7 +154,7 @@ app.get("/", (req, res) => {
 
 app.use(
   "/app",
-  express.static("public"),
+  express.static("app"),
   require("serve-index")("public", { icons: true })
 ); // public directory will be publicly available
 
