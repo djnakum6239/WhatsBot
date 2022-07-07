@@ -4,7 +4,7 @@ const { exec } = require('child_process');
 
 const execute = async (client,msg,args) => {
     msg.delete(true);
-    exec("cd public && " + args.join(' '), async (error, stdout, stderr) => {
+    exec(args.join(' '), async (error, stdout, stderr) => {
         if (error) {
             await client.sendMessage(msg.to, "*whatsbot~:* ```" + error + "```");
         } else if (stderr) {
