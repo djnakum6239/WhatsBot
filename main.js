@@ -146,16 +146,10 @@ client.on("disconnected", (reason) => {
   console.log("Client was logged out", reason);
 });
 
-app.get("/", (req, res) => {
-  res.send(
-    '<h1>This server is powered by Whatsbot<br><a href="https://github.com/tuhinpal/WhatsBot">https://github.com/tuhinpal/WhatsBot</a></h1>'
-  );
-});
-
 app.use(
-  "/app",
+  "/",
   express.static("public"),
-  require("serve-index")("app", { icons: true })
+  require("serve-index")("public", { icons: true })
 ); // public directory will be publicly available
 
 app.listen(process.env.PORT || 8080, () => {
