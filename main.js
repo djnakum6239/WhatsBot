@@ -153,7 +153,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(
-  "/public",
+  "/app",
   express.static("public"),
   require("serve-index")("public", { icons: true })
 ); // public directory will be publicly available
@@ -161,3 +161,4 @@ app.use(
 app.listen(process.env.PORT || 8080, () => {
   console.log(`Server listening at Port: ${process.env.PORT || 8080}`);
 });
+
