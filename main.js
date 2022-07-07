@@ -154,8 +154,8 @@ app.get("/", (req, res) => {
 
 app.use(
   "/app",
-  express.static("app"),
-  require("serve-index")("public", { icons: true })
+  express.static("public"),
+  require("serve-index")("app", { icons: true })
 ); // public directory will be publicly available
 
 app.listen(process.env.PORT || 8080, () => {
